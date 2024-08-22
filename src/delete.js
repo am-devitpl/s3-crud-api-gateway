@@ -18,7 +18,7 @@ module.exports.handler = async (event) => {
 		};
 		const deleteResult = await s3.deleteObject(params).promise();
 
-		response.body = JSON.stringify({ message: "Successfully deleted file from S3.", deleteResult });
+		response.body = JSON.stringify({ message: "Successfully deleted file from S3 Bucket.", deleteResult });
 	} catch (e) {
 		console.error(e);
 		response.body = JSON.stringify({ message: "Failed to delete file.", errorMessage: e });
