@@ -14,14 +14,13 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Use Node.js 20.x
+    - name: Set up Node.js 20.x
       uses: actions/setup-node@v3
       with:
         node-version: 20.x
 
-    # Optional: You can still install dev dependencies if you need to run tests or linters.
-    # - name: Install dev dependencies
-    #   run: npm install --only=dev
+    - name: Install Serverless plugins
+      run: npm install serverless-iam-roles-per-function
 
     - name: Deploy with Serverless Framework
       uses: serverless/github-action@master
