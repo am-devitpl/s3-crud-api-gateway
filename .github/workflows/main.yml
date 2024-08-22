@@ -22,6 +22,9 @@ jobs:
     - name: Install Serverless plugins
       run: npm install serverless-iam-roles-per-function
 
+    - name: Remove previous deployment (if necessary)
+      run: serverless remove || echo "Service does not exist, skipping removal."
+
     - name: Deploy with Serverless Framework
       uses: serverless/github-action@master
       with:
