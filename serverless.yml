@@ -1,4 +1,4 @@
-service: s3-file-api
+service: s3-file-api-lambda-layer
 
 provider:
   name: aws
